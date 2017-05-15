@@ -97,6 +97,10 @@ class Player extends Component {
     this.setState({ playing: false });
   }
 
+  sendLove(){
+    //TODO
+    console.log("love this song");
+  }
 
   render() {
     let songPlaying = this.props.songs[this.state.songIndex];
@@ -134,6 +138,9 @@ class Player extends Component {
     } else {
       shuffleButton = <Icon onPress={ this.toggleShuffle.bind(this) } style={ styles.shuffle } name="ios-shuffle-strong" size={18} color="#fff" />;
     }
+
+    let loveButton;
+    loveButton = <Icon onPress={ this.sendLove.bind(this) } style={ styles.love } name="ios-heart" size={18} color="#fff" />;
 
     let image = songPlaying.albumImage ? songPlaying.albumImage : this.props.artist.background;
     return (
@@ -189,7 +196,8 @@ class Player extends Component {
           <Icon onPress={ this.goBackward.bind(this) } style={ styles.back } name="ios-skipbackward" size={25} color="#fff" />
           { playButton }
           { forwardButton }
-          { volumeButton }
+          { loveButton }
+          {/*{ volumeButton }*/}
         </View>
       </View>
     );
@@ -258,6 +266,9 @@ const styles = StyleSheet.create({
   },
   volume: {
     marginTop: 26,
+  },
+  love: {
+      marginTop: 26,
   },
   sliderContainer: {
     width: window.width - 40,
