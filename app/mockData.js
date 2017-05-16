@@ -8,18 +8,21 @@ const Artists = [
         album: "Still Waters",
         albumImage: "http://www.clashmusic.com/sites/default/files/field/image/Breakbot%20%20Still%20Waters.jpg",
         url: "a",
+        ios_url: "/Users/zzzkky/Desktop/project/react-native-music-player-demo/ios/a.mp3",
       },
       {
           title: "海阔天空",
           album: "Still Waters",
           albumImage: "http://www.clashmusic.com/sites/default/files/field/image/Breakbot%20%20Still%20Waters.jpg",
           url: "b",
+          ios_url: "/Users/zzzkky/Desktop/project/react-native-music-player-demo/ios/b.mp3",
       },
       {
           title: "喜欢你",
           album: "Still Waters",
           albumImage: "http://www.clashmusic.com/sites/default/files/field/image/Breakbot%20%20Still%20Waters.jpg",
           url: "c",
+          ios_url: "/Users/zzzkky/Desktop/project/react-native-music-player-demo/ios/c.mp3",
       },
 
     ]

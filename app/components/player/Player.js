@@ -98,6 +98,17 @@ class Player extends Component {
   }
 
   sendLove(){
+    var {
+      Platform
+    } = React;
+    if (Platform.OS === 'ios'){
+      alert('成功标记喜爱该歌曲!');
+    } else {
+      var {
+        ToastAndroid
+      } = React;
+      ToastAndroid.show('成功标记喜爱该歌曲!', ToastAndroid.SHORT);
+    }
     //TODO
     console.log("love this song");
   }
@@ -143,9 +154,14 @@ class Player extends Component {
     loveButton = <Icon onPress={ this.sendLove.bind(this) } style={ styles.love } name="ios-heart" size={18} color="#fff" />;
 
     let image = songPlaying.albumImage ? songPlaying.albumImage : this.props.artist.background;
+
+    var {
+        Platform
+    } = React;
+
     return (
       <View style={styles.container}>
-        <Video source={{uri: songPlaying.url }}
+        <Video source={{uri: (Platform.OS === 'android' ? songPlaying.url : songPlaying.ios_url) }}
             ref="audio"
             volume={ this.state.muted ? 0 : 1.0}
             muted={false}
